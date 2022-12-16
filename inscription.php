@@ -18,7 +18,7 @@ $pwd2 = $_POST["pwd2"];
 // récupérer les infos de ma base de données
 $catchUsers = $conn->query("SELECT * FROM utilisateurs WHERE login='$login';");
 $users = mysqli_num_rows($catchUsers);
-var_dump($users);
+// var_dump($users);
 
 
 // si le bouton submit a été cliqué
@@ -27,9 +27,15 @@ if (isset($_POST['login'])) {
     if (($users === 0) && ($login != NULL) && ($pwd != NULL) && ($pwd === $pwd2)) {
         $newUser = $conn->query("INSERT INTO utilisateurs (`login`, `password`) VALUES ('$login','$pwd')");
         echo "Félicitations, votre compte a été créé avec succès !";
+        // refresh et redirection vers connexion
+        header("refresh:2; url=connexion.php");
+        // si le login existe
+    } elseif ($users === 1) {
+        echo "Erreur lors de la création du compte: Login déjà utilisé ";
+    } elseif ($pwd !== $pwd2) {
+        echo "Erreur lors de la création du compte: mots de passe différents";
     }
 }
-// }
 
 
 ?>
@@ -41,7 +47,7 @@ if (isset($_POST['login'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>S'incrire</title>
+    <title>Inscription</title>
 </head>
 
 <body>
@@ -50,7 +56,7 @@ if (isset($_POST['login'])) {
     ?>
 
     <div class="page">
-        <h1>Création de compte</h1>
+        <h1>S'inscrire</h1>
 
         <div class="formContainer">
             <form action="inscription.php" method="post">
