@@ -56,25 +56,25 @@ if (isset($_POST['submit'])) {
 </head>
 
 <body>
-    <?php require_once './includes/header.php'
-    ?>
-    <div class="page">
-        <h1>Réserver une salle</h1>
-        <h3>Créneaux de 1h, en semaine entre 8h et 19h</h3>
-        <div class="formContainer">
-            <form action="reservation-form.php" method="post">
-                <input type="text" placeholder="Titre" name="title" size="20" required>
-                <input type="text" placeholder="Description" name="desc" required>
-                <input type="date" name="date" required>
-                <input type="time" placeholder="Début" name="start" step="3600" min="08:00" max="18:00" required>
-                <input type="time" placeholder="Fin" name="end" step="3600" min="09:00" max="19:00" required>
-                <input type="submit" id="log" name="submit" value="Soumettre ma demande">
-            </form>
-
-
-
-
-        </div>
+    <?php require_once './includes/header.php';
+    if (isset($_SESSION['id'])) : ?>
+        <div class="page">
+            <h1>Réserver une salle</h1>
+            <h3>Créneaux de 1h, en semaine entre 8h et 19h</h3>
+            <div class="formContainer">
+                <form action="reservation-form.php" method="post">
+                    <input type="text" placeholder="Titre" name="title" size="20" required>
+                    <input type="text" placeholder="Description" name="desc" required>
+                    <input type="date" name="date" required>
+                    <input type="time" placeholder="Début" name="start" step="3600" min="08:00" max="18:00" required>
+                    <input type="time" placeholder="Fin" name="end" step="3600" min="09:00" max="19:00" required>
+                    <input type="submit" id="log" name="submit" value="Soumettre ma demande">
+                </form>
+            </div>
+        <?php else :
+        header('Location:connexion.php');
+    endif;
+        ?>
         <?php require_once './includes/footer.php' ?>
 </body>
 

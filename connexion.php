@@ -36,7 +36,7 @@ if (isset($_POST['submit'])) {
             // echo $_SESSION["id"];
             // puis valider la connexion en redirigeant vers profil.php
             echo "Connexion réussie";
-            header("refresh:2; url=profil.php");
+            header("refresh:2; url=planning.php");
         }
     } elseif ($users != 1) {
         echo "Ce login n'existe pas";
