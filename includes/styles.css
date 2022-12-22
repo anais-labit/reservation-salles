@@ -5,7 +5,8 @@
 }
 
 html,
-body {
+body,
+.formContainer {
   height: 100%;
 }
 
@@ -16,7 +17,6 @@ body {
 
 h1 {
   text-align: center;
-  background-color: white;
   padding-top: 10px;
   padding-bottom: 10px;
   color: #007a78;
@@ -32,7 +32,8 @@ a:hover {
   color: #f8df84;
 }
 
-.page {
+.page,
+.displayInfo {
   padding-top: 40px;
   flex-grow: 1;
 }
@@ -61,6 +62,62 @@ nav a {
   padding: 50px;
 }
 
+/* PAGE ACCUEIL */
+
+.page .textContainer {
+  padding-left: 20px;
+  padding-top: 30px;
+  padding-bottom: 40px;
+  color: rgb(94, 91, 91);
+}
+
+.page .textContainer h3,
+.page .textContainer p {
+  font-weight: 600;
+}
+
+.page .textContainer h3,
+.page .textContainer p,
+.page .textContainer ul {
+  padding: 20px;
+  width: 70vw;
+}
+.page .textContainer p {
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 40px;
+}
+
+.page .textContainer ul {
+  background-color: #007a78;
+  opacity: 0.8;
+  color: white;
+  font-weight: 400;
+  padding-bottom: 30px;
+  padding-left: 50px;
+  padding-right: 50px;
+  line-height: 30px;
+}
+
+.page .textContainer li {
+  /* padding-left: 60px;
+  padding-right: 60px; */
+}
+
+.page .textContainer li i {
+  opacity: 0;
+}
+
+.page .textContainer li:hover i {
+  color: orange;
+  opacity: 1;
+  font-size: 25px;
+}
+
+/* PAGE PLANNING */
+
+
+
 /* LE FOOTER  */
 
 footer {
@@ -78,4 +135,11 @@ footer {
 .decon a {
   display: flex;
   align-items: center;
+}
+
+/* PLANNING */
+
+.planningContainer a {
+  color: #f8df84;
+  text-decoration: none;
 }

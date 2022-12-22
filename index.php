@@ -47,6 +47,8 @@ require_once './includes/connect.php';
             <ul>Bonus <br><br>
                 <li><i class="fa-solid fa-check"></i> Affichage conditionnel de la barre de navigation</li>
                 <li><i class="fa-solid fa-check"></i> Suppression de compte</li>
+                <li><i class="fa-solid fa-check"></i> Gestion dynamique des dates du planning</li>
+
             </ul>
         </div>
     </div>

@@ -26,7 +26,7 @@ $planning = $bookings->fetch_all();
     <div class="page">
         <h1>Planning</h1>
         <div class="planningContainer">
-            <table border=1px>
+            <table>
                 <thead>
                     <tr>
                         <td></td>
