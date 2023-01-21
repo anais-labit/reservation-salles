@@ -28,7 +28,7 @@ if (isset($_POST['submit'])) {
     $bookings = $catchBookings->fetch_all();
     // var_dump($bookings);
 
-    if ((empty($bookings)) and ($testDay == !"Saturday" or $testDay == !"Sunday")) {
+    if ((empty($bookings)) and ($testDay !== "Saturday" and $testDay !== "Sunday")) {
         // requete pour inserer les valeurs issues des post + id de l'utilisateur qui effectue la résa dans la db
         $newBooking = $conn->query("INSERT INTO reservations (`titre`, `description`, `debut`, `fin`, `id_utilisateur`) VALUES ('$title', '$desc', '$start', '$end', '$id')");
         echo "Félicitations, votre réservation a bien été effectuée";
